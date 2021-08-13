@@ -1,0 +1,1420 @@
+Started GET "/" for ::1 at 2021-08-13 14:04:41 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/darianag/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/darianag/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.5ms | Allocations: 415)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 2237)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-08-13 14:05:07 -0400
+Started GET "/campers" for 127.0.0.1 at 2021-08-13 14:05:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/campers"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/activities"):
+  
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCampers (20210813180832)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "campers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210813180832"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSignups (20210813180929)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "signups" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "time" integer, "camper_id" integer, "activity_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210813180929"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateActivities (20210813181027)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "difficulty" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210813181027"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-08-13 18:11:15.429723"], ["updated_at", "2021-08-13 18:11:15.429723"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.3ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Caitlin"], ["age", 8], ["created_at", "2021-08-13 18:11:31.466975"], ["updated_at", "2021-08-13 18:11:31.466975"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.4ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lizzie"], ["age", 9], ["created_at", "2021-08-13 18:11:31.474751"], ["updated_at", "2021-08-13 18:11:31.474751"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.2ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tom"], ["age", 12], ["created_at", "2021-08-13 18:11:31.482729"], ["updated_at", "2021-08-13 18:11:31.482729"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.1ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Morgan"], ["age", 15], ["created_at", "2021-08-13 18:11:31.490444"], ["updated_at", "2021-08-13 18:11:31.490444"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.1ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Danny"], ["age", 11], ["created_at", "2021-08-13 18:11:31.497873"], ["updated_at", "2021-08-13 18:11:31.497873"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (0.8ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Peter"], ["age", 10], ["created_at", "2021-08-13 18:11:31.504284"], ["updated_at", "2021-08-13 18:11:31.504284"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.6ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Amanda"], ["age", 9], ["created_at", "2021-08-13 18:11:31.509206"], ["updated_at", "2021-08-13 18:11:31.509206"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.3ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nick"], ["age", 12], ["created_at", "2021-08-13 18:11:31.517824"], ["updated_at", "2021-08-13 18:11:31.517824"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Archery"], ["difficulty", 2], ["created_at", "2021-08-13 18:11:31.538987"], ["updated_at", "2021-08-13 18:11:31.538987"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (1.5ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Swimming"], ["difficulty", 3], ["created_at", "2021-08-13 18:11:31.555032"], ["updated_at", "2021-08-13 18:11:31.555032"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (1.3ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Photography"], ["difficulty", 2], ["created_at", "2021-08-13 18:11:31.563274"], ["updated_at", "2021-08-13 18:11:31.563274"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (1.0ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Arts & Crafts"], ["difficulty", 5], ["created_at", "2021-08-13 18:11:31.571414"], ["updated_at", "2021-08-13 18:11:31.571414"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (1.0ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Kayaking"], ["difficulty", 3], ["created_at", "2021-08-13 18:11:31.577985"], ["updated_at", "2021-08-13 18:11:31.577985"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (1.1ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fencing"], ["difficulty", 4], ["created_at", "2021-08-13 18:11:31.584026"], ["updated_at", "2021-08-13 18:11:31.584026"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (0.9ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Canoeing"], ["difficulty", 3], ["created_at", "2021-08-13 18:11:31.591039"], ["updated_at", "2021-08-13 18:11:31.591039"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("name", "difficulty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Windsurfing"], ["difficulty", 5], ["created_at", "2021-08-13 18:11:31.599678"], ["updated_at", "2021-08-13 18:11:31.599678"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (1.2ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 11], ["camper_id", 1], ["activity_id", 2], ["created_at", "2021-08-13 18:11:31.614784"], ["updated_at", "2021-08-13 18:11:31.614784"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (0.8ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 12], ["camper_id", 1], ["activity_id", 1], ["created_at", "2021-08-13 18:11:31.622507"], ["updated_at", "2021-08-13 18:11:31.622507"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (0.9ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 15], ["camper_id", 1], ["activity_id", 4], ["created_at", "2021-08-13 18:11:31.627979"], ["updated_at", "2021-08-13 18:11:31.627979"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (1.3ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 11], ["camper_id", 2], ["activity_id", 2], ["created_at", "2021-08-13 18:11:31.634538"], ["updated_at", "2021-08-13 18:11:31.634538"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (0.9ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 12], ["camper_id", 2], ["activity_id", 1], ["created_at", "2021-08-13 18:11:31.641880"], ["updated_at", "2021-08-13 18:11:31.641880"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (1.4ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 16], ["camper_id", 4], ["activity_id", 8], ["created_at", "2021-08-13 18:11:31.656913"], ["updated_at", "2021-08-13 18:11:31.656913"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (1.1ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 11], ["camper_id", 5], ["activity_id", 7], ["created_at", "2021-08-13 18:11:31.664991"], ["updated_at", "2021-08-13 18:11:31.664991"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSignup Create (0.9ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 12], ["camper_id", 3], ["activity_id", 4], ["created_at", "2021-08-13 18:11:31.673013"], ["updated_at", "2021-08-13 18:11:31.673013"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCamper Create (1.6ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Tom"], ["age", 14], ["created_at", "2021-08-13 18:17:53.145365"], ["updated_at", "2021-08-13 18:17:53.145365"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/campers" for ::1 at 2021-08-13 14:28:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 0 pending migration:
+
+
+
+):
+  
+activerecord (6.1.3.2) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.2) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:65:in `execute_if_updated'
+activerecord (6.1.3.2) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/campers" for ::1 at 2021-08-13 14:29:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 0 pending migration:
+
+
+
+):
+  
+activerecord (6.1.3.2) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.2) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3.2) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/campers" for ::1 at 2021-08-13 14:29:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 0 pending migration:
+
+
+
+):
+  
+activerecord (6.1.3.2) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.2) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3.2) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.2) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/campers" for ::1 at 2021-08-13 14:29:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (1.63ms)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.8ms | Allocations: 6523)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:31:05 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (1.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 3.6ms | Allocations: 5155)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:32:21 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (1.06ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.2ms | Allocations: 5714)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:32:23 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (0.93ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 1539)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:32:25 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (0.54ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1537)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:32:26 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (0.77ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1539)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:33:49 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.5ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (0.95ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 2.6ms | Allocations: 5919)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:33:50 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (1.71ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1815)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:33:53 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (0.93ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1815)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:34:07 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+No serializer found for resource: #<Camper id: 1, name: "Caitlin", age: 8, created_at: "2021-08-13 18:11:31.466975000 +0000", updated_at: "2021-08-13 18:11:31.466975000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Camper::ActiveRecord_Relation (0.91ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 1815)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:34:47 -0400
+Processing by CampersController#index as */*
+Completed 500 Internal Server Error in 6ms (Allocations: 1907)
+
+
+  
+NameError (uninitialized constant CampersController::CamperSerializer):
+  
+app/controllers/campers_controller.rb:5:in `index'
+Started GET "/campers" for ::1 at 2021-08-13 14:34:48 -0400
+Processing by CampersController#index as */*
+Completed 500 Internal Server Error in 3ms (Allocations: 1442)
+
+
+  
+NameError (uninitialized constant CampersController::CamperSerializer):
+  
+app/controllers/campers_controller.rb:5:in `index'
+Started GET "/campers" for ::1 at 2021-08-13 14:35:21 -0400
+Processing by CampersController#index as */*
+Completed 500 Internal Server Error in 6ms (Allocations: 1896)
+
+
+  
+NameError (uninitialized constant CampersController::CamperSerializer):
+  
+app/controllers/campers_controller.rb:5:in `index'
+Started GET "/campers" for ::1 at 2021-08-13 14:35:21 -0400
+Processing by CampersController#index as */*
+Completed 500 Internal Server Error in 3ms (Allocations: 1442)
+
+
+  
+NameError (uninitialized constant CampersController::CamperSerializer):
+  
+app/controllers/campers_controller.rb:5:in `index'
+Started GET "/campers" for ::1 at 2021-08-13 14:35:47 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.01ms)
+Completed 200 OK in 44ms (Views: 21.1ms | ActiveRecord: 1.5ms | Allocations: 11063)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:35:48 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.4ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 1358)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:35:49 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1358)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 14:36:50 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.12ms)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 1.2ms | Allocations: 5589)
+
+
+Started GET "/campers/67" for ::1 at 2021-08-13 14:40:32 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"67"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 16ms (Views: 2.9ms | ActiveRecord: 1.0ms | Allocations: 3039)
+
+
+Started GET "/campers/67" for ::1 at 2021-08-13 14:40:39 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"67"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 593)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:40:55 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 3264)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:42:21 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (1.2ms)
+Completed 200 OK in 14ms (Views: 2.6ms | ActiveRecord: 0.9ms | Allocations: 4816)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:42:22 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (1.05ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 658)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:42:24 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (1.16ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 658)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:42:26 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 658)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:43:20 -0400
+  
+Zeitwerk::NameError (wrong constant name 1camperSerializer inferred by Module from file
+
+  /Users/darianag/Code Challenges /Phase 4 Ruby on Rails/phase-4-mock-challenge-camping-fun/app/serializers/1camper_serializer.rb
+
+Possible ways to address this:
+
+  * Tell Zeitwerk to ignore this particular file.
+  * Tell Zeitwerk to ignore one of its parent directories.
+  * Rename the file to comply with the naming conventions.
+  * Modify the inflector to handle this case.
+):
+  
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:558:in `rescue in block in set_autoloads_in_dir'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:534:in `block in set_autoloads_in_dir'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:733:in `block in ls'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:725:in `foreach'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:725:in `ls'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:533:in `set_autoloads_in_dir'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:295:in `block (2 levels) in setup'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:294:in `each'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:294:in `block in setup'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:291:in `synchronize'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:291:in `setup'
+zeitwerk (2.4.2) lib/zeitwerk/loader.rb:380:in `reload'
+activesupport (6.1.3.2) lib/active_support/dependencies/zeitwerk_integration.rb:12:in `block in clear'
+activesupport (6.1.3.2) lib/active_support/dependencies.rb:46:in `block in unload_interlock'
+activesupport (6.1.3.2) lib/active_support/dependencies/interlock.rb:20:in `block in unloading'
+activesupport (6.1.3.2) lib/active_support/concurrency/share_lock.rb:151:in `exclusive'
+activesupport (6.1.3.2) lib/active_support/dependencies/interlock.rb:19:in `unloading'
+activesupport (6.1.3.2) lib/active_support/dependencies.rb:46:in `unload_interlock'
+activesupport (6.1.3.2) lib/active_support/dependencies/zeitwerk_integration.rb:11:in `clear'
+railties (6.1.3.2) lib/rails/application/finisher.rb:217:in `block (2 levels) in <module:Finisher>'
+activesupport (6.1.3.2) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+railties (6.1.3.2) lib/rails/application/finisher.rb:245:in `block (3 levels) in <module:Finisher>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:106:in `run_callbacks'
+activesupport (6.1.3.2) lib/active_support/reloader.rb:120:in `class_unload!'
+railties (6.1.3.2) lib/rails/application/finisher.rb:244:in `block (2 levels) in <module:Finisher>'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `instance_exec'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:604:in `block (2 levels) in default_terminator'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:603:in `catch'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:603:in `block in default_terminator'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.2) lib/active_support/callbacks.rb:105:in `run_callbacks'
+activesupport (6.1.3.2) lib/active_support/execution_wrapper.rb:111:in `run!'
+activesupport (6.1.3.2) lib/active_support/reloader.rb:114:in `run!'
+activesupport (6.1.3.2) lib/active_support/execution_wrapper.rb:73:in `block in run!'
+activesupport (6.1.3.2) lib/active_support/execution_wrapper.rb:70:in `tap'
+activesupport (6.1.3.2) lib/active_support/execution_wrapper.rb:70:in `run!'
+activesupport (6.1.3.2) lib/active_support/reloader.rb:63:in `run!'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.2) lib/rails/engine.rb:539:in `call'
+puma (5.3.2) lib/puma/configuration.rb:249:in `call'
+puma (5.3.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.3.2) lib/puma/thread_pool.rb:338:in `with_force_shutdown'
+puma (5.3.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.3.2) lib/puma/server.rb:438:in `process_client'
+puma (5.3.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/campers/1" for ::1 at 2021-08-13 14:43:42 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.4ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Camper (9.47ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.7ms | Allocations: 11871)
+
+
+  
+NoMethodError (undefined method `activities' for #<Camper:0x00007fab6792a580>):
+  
+app/controllers/campers_controller.rb:12:in `show'
+Started GET "/campers/1" for ::1 at 2021-08-13 14:43:44 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Camper (8.56ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 2798)
+
+
+  
+NoMethodError (undefined method `activities' for #<Camper:0x00007fab6788c8d0>):
+  
+app/controllers/campers_controller.rb:12:in `show'
+Started GET "/campers/1" for ::1 at 2021-08-13 14:45:59 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Camper (25.34ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.5ms | Allocations: 13833)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "activity" or :activities in model Signup. Try 'has_many :activities, :through => :signups, :source => <name>'. Is it one of camper or Activity?):
+  
+app/controllers/campers_controller.rb:12:in `show'
+Started GET "/campers/1" for ::1 at 2021-08-13 14:46:00 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Camper (0.47ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 814)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "activity" or :activities in model Signup. Try 'has_many :activities, :through => :signups, :source => <name>'. Is it one of camper or Activity?):
+  
+app/controllers/campers_controller.rb:12:in `show'
+Started GET "/campers/1" for ::1 at 2021-08-13 14:46:39 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Camper (26.28ms)
+Completed 200 OK in 45ms (Views: 26.1ms | ActiveRecord: 2.3ms | Allocations: 14557)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:48:55 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+Completed 200 OK in 32ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 5725)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:48:57 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 635)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:49:16 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 5712)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:50:54 -0400
+  
+SyntaxError (/Users/darianag/Code Challenges /Phase 4 Ruby on Rails/phase-4-mock-challenge-camping-fun/app/controllers/campers_controller.rb:12: syntax error, unexpected '}', expecting ']'
+...pt: [:created_at, :updated_at }]) 
+...                              ^):
+  
+app/controllers/campers_controller.rb:12: syntax error, unexpected '}', expecting ']'
+app/controllers/campers_controller.rb:12: syntax error, unexpected '}', expecting ']'
+Started GET "/campers/1" for ::1 at 2021-08-13 14:51:59 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.8ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mActivity Load (2.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+  ↳ app/controllers/campers_controller.rb:12:in `show'
+Completed 200 OK in 60ms (Views: 0.5ms | ActiveRecord: 9.2ms | Allocations: 12098)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:54:41 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.5ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (34.07ms)
+Completed 200 OK in 78ms (Views: 64.0ms | ActiveRecord: 3.1ms | Allocations: 16049)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:54:42 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (2.26ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 2034)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:54:44 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (2.9ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 2031)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:54:45 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (2.62ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 2032)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:54:48 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (2.8ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 2032)
+
+
+Started GET "/campers/1" for ::1 at 2021-08-13 14:54:52 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (2.18ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 2031)
+
+
+Started GET "/campers/2" for ::1 at 2021-08-13 14:54:54 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (3.54ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 1921)
+
+
+Started GET "/campers/54" for ::1 at 2021-08-13 14:59:31 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"54"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 3382)
+
+
+Started GET "/campers/54" for ::1 at 2021-08-13 15:00:54 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"54"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 8ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 3372)
+
+
+Started POST "/campers" for ::1 at 2021-08-13 15:08:39 -0400
+  
+SyntaxError (/Users/darianag/Code Challenges /Phase 4 Ruby on Rails/phase-4-mock-challenge-camping-fun/app/controllers/campers_controller.rb:25: syntax error, unexpected ']', expecting '}'
+..."error": ["validation errors"]]}
+...                              ^
+/Users/darianag/Code Challenges /Phase 4 Ruby on Rails/phase-4-mock-challenge-camping-fun/app/controllers/campers_controller.rb:32: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/campers_controller.rb:25: syntax error, unexpected ']', expecting '}'
+app/controllers/campers_controller.rb:32: syntax error, unexpected end-of-input, expecting end
+app/controllers/campers_controller.rb:25: syntax error, unexpected ']', expecting '}'
+app/controllers/campers_controller.rb:32: syntax error, unexpected end-of-input, expecting end
+Started POST "/campers" for ::1 at 2021-08-13 15:09:01 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CampersController#create as */*
+  Parameters: {"name"=>"Dariana", "age"=>8, "camper"=>{"name"=>"Dariana", "age"=>8}}
+[31mUnpermitted parameter: :camper[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/campers_controller.rb:22:in `create'
+  [1m[36mCamper Create (1.5ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dariana"], ["age", 8], ["created_at", "2021-08-13 19:09:01.356135"], ["updated_at", "2021-08-13 19:09:01.356135"]]
+  ↳ app/controllers/campers_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campers_controller.rb:22:in `create'
+[active_model_serializers]   [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:23:in `create'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (10.39ms)
+Completed 200 OK in 24ms (Views: 11.5ms | ActiveRecord: 4.9ms | Allocations: 9195)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:11:15 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (23.39ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 1.4ms | Allocations: 16191)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:13:11 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (51.18ms)
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 5.7ms | Allocations: 24645)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:13:12 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.73ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 1.5ms | Allocations: 13681)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:13:27 -0400
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (100.58ms)
+Completed 200 OK in 172ms (Views: 117.6ms | ActiveRecord: 5.0ms | Allocations: 38515)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:13:29 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (81.96ms)
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 2.2ms | Allocations: 13699)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:13:32 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (1.0ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.85ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 2.2ms | Allocations: 13700)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:13:35 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.25ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 2.3ms | Allocations: 13699)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:14:54 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.33ms)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 1.2ms | Allocations: 6833)
+
+
+Started POST "/campers" for ::1 at 2021-08-13 15:15:02 -0400
+Processing by CampersController#create as */*
+  Parameters: {"name"=>"Dariana", "age"=>8, "camper"=>{"name"=>"Dariana", "age"=>8}}
+[31mUnpermitted parameter: :camper[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/campers_controller.rb:22:in `create'
+  [1m[36mCamper Create (1.3ms)[0m  [1m[32mINSERT INTO "campers" ("name", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dariana"], ["age", 8], ["created_at", "2021-08-13 19:15:02.022848"], ["updated_at", "2021-08-13 19:15:02.022848"]]
+  ↳ app/controllers/campers_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/campers_controller.rb:22:in `create'
+[active_model_serializers] Rendered CamperNoActivitiesSerializer with ActiveModelSerializers::Adapter::Attributes (0.24ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 3.0ms | Allocations: 2212)
+
+
+Started POST "/campers" for ::1 at 2021-08-13 15:17:14 -0400
+Processing by CampersController#create as */*
+  Parameters: {"name"=>"Dariana", "age"=>4, "camper"=>{"name"=>"Dariana", "age"=>4}}
+[31mUnpermitted parameter: :camper[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 820)
+
+
+Started GET "/activities" for ::1 at 2021-08-13 15:18:54 -0400
+Processing by ActivitiesController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/activities_controller.rb:6:in `index'
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 1.2ms | Allocations: 7065)
+
+
+Started GET "/activities" for ::1 at 2021-08-13 15:18:56 -0400
+Processing by ActivitiesController#index as */*
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1563)
+
+
+Started DELETE "/activities/2" for ::1 at 2021-08-13 15:27:17 -0400
+Processing by ActivitiesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/activities_controller.rb:11:in `destroy'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:11:in `destroy'
+  [1m[36mSignup Load (0.1ms)[0m  [1m[34mSELECT "signups".* FROM "signups" WHERE "signups"."activity_id" = ?[0m  [["activity_id", 2]]
+  ↳ app/controllers/activities_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:13:in `destroy'
+  [1m[36mSignup Destroy (1.1ms)[0m  [1m[31mDELETE FROM "signups" WHERE "signups"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/activities_controller.rb:13:in `destroy'
+  [1m[36mSignup Destroy (0.1ms)[0m  [1m[31mDELETE FROM "signups" WHERE "signups"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/activities_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:14:in `destroy'
+  [1m[36mActivity Destroy (1.1ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/activities_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:14:in `destroy'
+Completed 204 No Content in 40ms (ActiveRecord: 7.5ms | Allocations: 13467)
+
+
+Started DELETE "/activities/3" for ::1 at 2021-08-13 15:28:12 -0400
+Processing by ActivitiesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/activities_controller.rb:11:in `destroy'
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/activities_controller.rb:11:in `destroy'
+  [1m[36mSignup Load (0.2ms)[0m  [1m[34mSELECT "signups".* FROM "signups" WHERE "signups"."activity_id" = ?[0m  [["activity_id", 3]]
+  ↳ app/controllers/activities_controller.rb:13:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/activities_controller.rb:14:in `destroy'
+  [1m[36mActivity Destroy (1.0ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/activities_controller.rb:14:in `destroy'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/activities_controller.rb:14:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 36ms (Views: 0.7ms | ActiveRecord: 6.8ms | Allocations: 8624)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:32:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>25, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>25, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 1.9ms | Allocations: 12074)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:32:50 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>25, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>25, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 2877)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:32:53 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>25, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>25, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2874)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:33:22 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>13, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>13, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 2861)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:33:23 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>13, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>13, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 2858)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:33:25 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>13, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>13, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 2858)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:34:09 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>13, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>13, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2858)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:34:10 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>13, "camper_id"=>1, "activity_id"=>3, "signup"=>{"time"=>13, "camper_id"=>1, "activity_id"=>3}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.2ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 2858)
+
+
+Started POST "/signups" for ::1 at 2021-08-13 15:34:46 -0400
+Processing by SignupsController#create as */*
+  Parameters: {"time"=>13, "camper_id"=>1, "activity_id"=>4, "signup"=>{"time"=>13, "camper_id"=>1, "activity_id"=>4}}
+[31mUnpermitted parameter: :signup[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mCamper Load (0.4ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mSignup Create (0.8ms)[0m  [1m[32mINSERT INTO "signups" ("time", "camper_id", "activity_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["time", 13], ["camper_id", 1], ["activity_id", 4], ["created_at", "2021-08-13 19:34:46.595357"], ["updated_at", "2021-08-13 19:34:46.595357"]]
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/signups_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActivitySerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 20ms (Views: 3.6ms | ActiveRecord: 3.2ms | Allocations: 5897)
+
+
+Started GET "/campers/3" for ::1 at 2021-08-13 15:43:25 -0400
+Processing by CampersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+  [1m[36mCamper Load (0.7ms)[0m  [1m[34mSELECT "campers".* FROM "campers" WHERE "campers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/campers_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:13:in `show'
+[active_model_serializers] Rendered CamperSerializer with ActiveModelSerializers::Adapter::Attributes (14.3ms)
+Completed 200 OK in 47ms (Views: 15.8ms | ActiveRecord: 2.5ms | Allocations: 11896)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:44:21 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.5ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 11]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.1ms)
+Completed 200 OK in 61ms (Views: 55.3ms | ActiveRecord: 5.8ms | Allocations: 25977)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:44:29 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.1ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 11]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.44ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.9ms | Allocations: 14908)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:44:31 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 1]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 2]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 3]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 4]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 5]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 6]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 7]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 8]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 9]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 10]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "signups" ON "activities"."id" = "signups"."activity_id" WHERE "signups"."camper_id" = ?[0m  [["camper_id", 11]]
+[active_model_serializers]   ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (26.09ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 2.0ms | Allocations: 14908)
+
+
+Started GET "/campers" for ::1 at 2021-08-13 15:45:19 -0400
+Processing by CampersController#index as */*
+[active_model_serializers] Rendered CamperNoActivitiesSerializer with ActiveModelSerializers::Adapter::Attributes (2.78ms)
+Completed 500 Internal Server Error in 8ms (Allocations: 2681)
+
+
+  
+NoMethodError (undefined method `model_name' for Camper::ActiveRecord_Relation:Class
+Did you mean?  module_parent):
+  
+app/controllers/campers_controller.rb:5:in `index'
+Started GET "/campers" for ::1 at 2021-08-13 15:45:38 -0400
+Processing by CampersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+  [1m[36mCamper Load (0.5ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.27ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 1.4ms | Allocations: 6913)
+
+
+Started GET "/activities" for 127.0.0.1 at 2021-08-13 15:50:07 -0400
+Started GET "/campers" for 127.0.0.1 at 2021-08-13 15:50:07 -0400
+Processing by CampersController#index as */*
+  [1m[36mCamper Load (0.3ms)[0m  [1m[34mSELECT "campers".* FROM "campers"[0m
+  ↳ app/controllers/campers_controller.rb:5:in `index'
+Processing by ActivitiesController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.79ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 2015)
+
+
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/activities_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.32ms)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 1.2ms | Allocations: 5859)
+
+
