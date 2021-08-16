@@ -14,7 +14,7 @@ class ActivitiesController < ApplicationController
             activity.destroy
             render json: {}
         else
-            render json: {"error": "Activity not found"}
+            render json: {"error": "Activity not found"}, status: :not_found
         end
     end
 

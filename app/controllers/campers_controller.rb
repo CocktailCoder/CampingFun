@@ -20,9 +20,9 @@ class CampersController < ApplicationController
     def create
         camper = Camper.new(camper_params)
         if camper.save
-            render json: camper, serializer: CamperNoActivitiesSerializer
+            render json: camper, serializer: CamperNoActivitiesSerializer, status: :created
         else
-            render json: {"error": ["validation errors"]}
+            render json: {"errors": ["validation errors"]}, status: :unprocessable_entity
         end
     end
 
